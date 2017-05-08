@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCvBdGh8s-kdgREGoxgLhKWvNfm-z05jzY",
+            authDomain: "jersey-e5a24.firebaseapp.com",
+            databaseURL: "https://jersey-e5a24.firebaseio.com",
+            projectId: "jersey-e5a24",
+            storageBucket: "jersey-e5a24.appspot.com",
+            messagingSenderId: "205560180145"
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="app">
+        <title-component></title-component>
+        <div id="mySidenav" class="sidenav">
+            <router-link to="/dashboard/profile">Profile</router-link>
+            <router-link to="/dashboard/vocabulary">Vocabulary</router-link>
+            <router-link to="/dashboard/quiz">Quiz</router-link>
+            <router-link to="/dashboard/help">Help</router-link>
+            <a id="logout" @click="logout">Logout</a>
+        </div>
+        <div id="main">
+            <router-view></router-view>
+        </div>
+        <!--
+        <navigation></navigation>
+        <main-content></main-content>-->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./js/dist/vendor.js"></script>
+    <script src="./js/dist/bundle.js"></script>
+    <script type="text/javascript">
+        // var myEvent = window.attachEvent || window.addEventListener;
+        // var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+
+        // myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+        //     var confirmationMessage = 'Are you sure to leave the page?'; // a space
+        //     (e || window.event).returnValue = confirmationMessage;
+        //     return confirmationMessage;
+        // });
+
+        $(window).on('mouseover', (function() {
+            window.onbeforeunload = null;
+        }));
+        $(window).on('mouseout', (function() {
+            window.onbeforeunload = ConfirmLeave;
+        }));
+
+        function ConfirmLeave() {
+            firebase.auth.signOut();
+        }
+        var prevKey = "";
+        $(document).keydown(function(e) {
+            //alert('Keys - F4: ' + (e.key.toUpperCase() == "F4") + " ALT:" + (prevKey == "ALT"));
+            if (e.key == "F5") {
+                window.onbeforeunload = ConfirmLeave;
+            } else if (e.key.toUpperCase() == "W" && prevKey == "CONTROL") {
+                window.onbeforeunload = ConfirmLeave;
+            } else if (e.key.toUpperCase() == "R" && prevKey == "CONTROL") {
+                window.onbeforeunload = ConfirmLeave;
+            } else if (e.key.toUpperCase() == "F4" && (prevKey == "ALT" || prevKey == "CONTROL")) {
+                window.onbeforeunload = ConfirmLeave;
+            }
+            prevKey = e.key.toUpperCase();
+        });
+    </script>
+</body>
+
+</html>
