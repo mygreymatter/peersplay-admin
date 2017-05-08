@@ -1,0 +1,22 @@
+{
+    "name": "pipeline-admin",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "author": "mayo",
+    "license": "MIT",
+    "dependencies": {
+        "atob": "^2.0.3",
+        "body-parser": "^1.17.1",
+        "btoa": "^1.1.2",
+        "express": "^4.15.2",
+        "firebase": "^3.7.8",
+        "firebase-admin": "^4.2.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.11.0"
+    }
+}
