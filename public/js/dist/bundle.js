@@ -91,13 +91,109 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
         return {
-            title: 'Login Component'
+            title: 'Login Component',
+            isLoginSelected: true
         };
+    }, methods: {
+        showLogin() {
+            this.isLoginSelected = true;
+        }, showSignup() {
+            this.isLoginSelected = false;
+        }
     }
 });
 
@@ -111,7 +207,7 @@ exports = module.exports = __webpack_require__(36)(undefined);
 
 
 // module
-exports.push([module.i, "\n.main-container{\n    margin-top:4%;\n    padding:5%;\n}\n.authentication-header a{\n    color:#AEAEAE;\n}\n.authentication-header a:hover{\n    color:#000000;\n}\nfooter.card-footer.authentication-header{\n    border-bottom:1px solid #dbdbdb;\n    border-top:0px;\n}\n@media only screen and (min-width: 768px){\n.main-container{\n        margin-top:4%;\n        padding:2%;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.main-container{\n    margin-top:4%;\n    padding:5%;\n}\n.authentication-header a{\n    color:#AEAEAE;\n}\n.authentication-header a:hover{\n    color:#000000;\n}\nfooter.card-footer.authentication-header{\n    border-bottom:1px solid #dbdbdb;\n    border-top:0px;\n}\n.authentication-content{\n    padding:10px;\n    padding-bottom:0;\n}\np.control.has-icons-left,\np.level-item.has-text-centered,\ndiv#login-content,\ndiv#signup-content{\n    margin-bottom:0;\n}\n.authentication-content button.button.is-primary{\n    width:120px;\n}\n.authentication-content nav{\n    padding-left:10%;\n    padding-right:10%;\n}\na.card-footer-item.isActive{\n    color:#333;\n}\n@media only screen and (min-width: 768px){\n.main-container{\n        margin-top:4%;\n        padding:2%;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -263,27 +359,182 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-hidden-mobile"
   }), _vm._v(" "), _c('div', {
-    staticClass: "column has-text-centered"
+    staticClass: "column"
   }, [_c('div', {
     staticClass: "card authentication-card"
   }, [_c('footer', {
-    staticClass: "card-footer authentication-header"
+    staticClass: "card-footer authentication-header  has-text-centered"
   }, [_c('a', {
-    staticClass: "card-footer-item"
+    staticClass: "card-footer-item",
+    class: {
+      isActive: _vm.isLoginSelected
+    },
+    on: {
+      "click": _vm.showLogin
+    }
   }, [_vm._v("Login")]), _vm._v(" "), _c('a', {
-    staticClass: "card-footer-item"
+    staticClass: "card-footer-item",
+    class: {
+      isActive: !_vm.isLoginSelected
+    },
+    on: {
+      "click": _vm.showSignup
+    }
   }, [_vm._v("Signup")])]), _vm._v(" "), _c('div', {
-    staticClass: "content has-text-centered"
-  }, [_vm._v("\n                    Hello Word\n                ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "content authentication-content"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isLoginSelected),
+      expression: "isLoginSelected"
+    }],
+    staticClass: "columns",
+    attrs: {
+      "id": "login-content"
+    }
+  }, [_vm._m(0)]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isLoginSelected),
+      expression: "!isLoginSelected"
+    }],
+    staticClass: "columns",
+    attrs: {
+      "id": "signup-content"
+    }
+  }, [_vm._m(1)])])])]), _vm._v(" "), _c('div', {
     staticClass: "column is-hidden-mobile"
   })])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "column"
+  }, [_c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label",
+    attrs: {
+      "for": "username"
+    }
+  }, [_vm._v("Username")]), _vm._v(" "), _c('p', {
+    staticClass: "control has-icons-left has-icons-right"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter username"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon is-small is-left"
+  }, [_c('i', {
+    staticClass: "fa fa-user"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label",
+    attrs: {
+      "for": "password"
+    }
+  }, [_vm._v("Password")]), _vm._v(" "), _c('p', {
+    staticClass: "control has-icons-left has-icons-right"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "Enter password"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon is-small is-left"
+  }, [_c('i', {
+    staticClass: "fa fa-key"
+  })])])]), _vm._v(" "), _c('nav', {
+    staticClass: "level is-flex-touch"
+  }, [_c('p', {
+    staticClass: "level-item has-text-centered"
+  }, [_c('button', {
+    staticClass: "button is-primary"
+  }, [_vm._v("Login")])]), _vm._v(" "), _c('p', {
+    staticClass: "level-item has-text-centered"
+  }, [_c('button', {
+    staticClass: "button is-primary"
+  }, [_vm._v("Cancel")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "column"
+  }, [_c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label",
+    attrs: {
+      "for": "username"
+    }
+  }, [_vm._v("Username")]), _vm._v(" "), _c('p', {
+    staticClass: "control has-icons-left has-icons-right"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter username"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon is-small is-left"
+  }, [_c('i', {
+    staticClass: "fa fa-user"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label",
+    attrs: {
+      "for": "password"
+    }
+  }, [_vm._v("Password")]), _vm._v(" "), _c('p', {
+    staticClass: "control has-icons-left has-icons-right"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "Enter password"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon is-small is-left"
+  }, [_c('i', {
+    staticClass: "fa fa-key"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label",
+    attrs: {
+      "for": "confirmpassword"
+    }
+  }, [_vm._v("Confirm Password")]), _vm._v(" "), _c('p', {
+    staticClass: "control has-icons-left has-icons-right"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "password",
+      "placeholder": "Reenter password"
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon is-small is-left"
+  }, [_c('i', {
+    staticClass: "fa fa-key"
+  })])])]), _vm._v(" "), _c('nav', {
+    staticClass: "level is-flex-touch"
+  }, [_c('p', {
+    staticClass: "level-item has-text-centered"
+  }, [_c('button', {
+    staticClass: "button is-primary"
+  }, [_vm._v("Signup")])]), _vm._v(" "), _c('p', {
+    staticClass: "level-item has-text-centered"
+  }, [_c('button', {
+    staticClass: "button is-primary"
+  }, [_vm._v("Cancel")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
