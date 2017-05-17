@@ -383,7 +383,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/profile-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/profile-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] profile-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -421,7 +421,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/vocabulary-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/vocabulary-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] vocabulary-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -463,7 +463,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/help-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/help-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] help-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -497,7 +497,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/main-content.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/main-content.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main-content.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -535,7 +535,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/navigation.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/navigation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] navigation.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -573,7 +573,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/quiz-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/quiz-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] quiz-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -607,7 +607,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/title-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/title-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] title-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -1239,6 +1239,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
@@ -1246,7 +1299,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             query: '',
             isLoading: false,
             names: [],
-            canShowWords: true
+            canShowWords: true,
+            isEditMode: true,
+            examples: [],
+            range: 1
         };
     }, watch: {
         query: function (val) {
@@ -1261,6 +1317,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.names = [];
                 this.canShowWords = true;
             }
+        }
+    }, methods: {
+        showEditor() {
+            this.isEditMode = true;
+            console.log("Edit Mode: " + this.isEditMode);
+        }, addExample() {
+            this.range += 1;
         }
     }
 });
@@ -1289,7 +1352,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n#search-input[data-v-3e84c15c]{\n    padding:10px;\n    width:100%;\n    height:40px;\n    background-color: transparent;\n    border: 1px solid;\n    color: #CCC;\n    font-size:20px;\n}\n#search-input[data-v-3e84c15c]:focus{\n  outline:none;\n  color:#000;\n  border: 1px #ccc solid;\n}\n.search-result[data-v-3e84c15c]{\n    border-bottom: 1px #AEAEAE solid;\n    border-right: 1px #AEAEAE solid;\n    border-left: 1px #AEAEAE solid;\n    padding: 5px;\n    font-weight:lighter;\n}\n.card[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\n.box[data-v-3e84c15c],.card-content[data-v-3e84c15c]{\n    padding:1rem;\n}\n.word[data-v-3e84c15c]{\n    font-weight:bold;\n    font-size:24px;\n}\n.word-type[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:blueviolet;\n    font-style:italic;\n    font-size:18px;\n}\n.words-container[data-v-3e84c15c]{\n    margin: 0 20px 0 10px;\n    width:100%;\n}\n.word-card[data-v-3e84c15c]:hover{\n    cursor: pointer;\n}\n.word-example-title[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#616161;\n}\n.word-example[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#000000;\n}\n.word-more-examples[data-v-3e84c15c]{\n    font-weight:300;\n    font-style:italic;\n}\n.word-more-examples[data-v-3e84c15c]:hover{\n    cursor:pointer;\n    color:#AEAEAE;\n}\n", ""]);
+exports.push([module.i, "\n#search-input[data-v-3e84c15c]{\n    padding:10px;\n    width:100%;\n    height:40px;\n    background-color: transparent;\n    border: 1px solid;\n    color: #CCC;\n    font-size:20px;\n}\n#search-input[data-v-3e84c15c]:focus{\n  outline:none;\n  color:#000;\n  border: 1px #ccc solid;\n}\n.search-result[data-v-3e84c15c]{\n    border-bottom: 1px #AEAEAE solid;\n    border-right: 1px #AEAEAE solid;\n    border-left: 1px #AEAEAE solid;\n    padding: 5px;\n    font-weight:lighter;\n}\n.card[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\n.box[data-v-3e84c15c],.card-content[data-v-3e84c15c]{\n    padding:1rem;\n}\n.word[data-v-3e84c15c]{\n    font-weight:bold;\n    font-size:24px;\n}\n.word-type[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:blueviolet;\n    font-style:italic;\n    font-size:18px;\n}\n.words-container[data-v-3e84c15c]{\n    margin: 0 20px 0 10px;\n    width:100%;\n}\n.word-card[data-v-3e84c15c]:hover{\n    cursor: pointer;\n}\n.word-example-title[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#616161;\n}\n.word-example[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#000000;\n}\n.word-more-examples[data-v-3e84c15c]{\n    font-weight:300;\n    font-style:italic;\n}\n.word-more-examples[data-v-3e84c15c]:hover{\n    cursor:pointer;\n    color:#AEAEAE;\n}\np.control.back-control[data-v-3e84c15c]{\n    margin-bottom:20px;\n}\n.word-input-container[data-v-3e84c15c]{width:70%;\n}\nspan.icon.plus.is-large[data-v-3e84c15c]{\n    margin-right: 10px;\n    font-weight: lighter;\n    font-size: x-large;\n    margin-left:82%;\n}\nspan.icon.plus.is-large[data-v-3e84c15c]:hover{\n    cursor:pointer;\n}\n.example-input[data-v-3e84c15c]{\n    margin-bottom:10px;\n}\n.icon.is-large[data-v-3e84c15c]{\n    height:1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -1552,9 +1615,27 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isEditMode),
+      expression: "!isEditMode"
+    }],
+    staticClass: "container",
+    attrs: {
+      "id": "words-list-container"
+    }
+  }, [_c('div', {
+    staticClass: "container",
+    attrs: {
+      "id": "search-view"
+    }
+  }, [_c('div', {
     staticClass: "columns"
   }, [_c('div', {
-    staticClass: "column is-half is-offset-one-quarter"
+    staticClass: "column"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "column is-half"
   }, [_c('div', [_c('p', {
     staticClass: "control has-icons-right",
     class: {
@@ -1582,13 +1663,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.query = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('div', {
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "column has-text-centered"
+  }, [_c('span', {
+    staticClass: "icon plus is-large is-pulled-right",
+    on: {
+      "click": _vm.showEditor
+    }
+  }, [_vm._v("\n                        ＋\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
     staticClass: "results"
   }, [_c('ul', _vm._l((_vm.names), function(name) {
     return _c('li', [_c('div', {
       staticClass: "search-result"
-    }, [_vm._v("\n                              " + _vm._s(name) + "\n                        ")])])
+    }, [_vm._v("\n                                    " + _vm._s(name) + "\n                                ")])])
   }))])])]), _vm._v(" "), _c('div', {
+    staticClass: "container",
+    attrs: {
+      "id": "list-words-container"
+    }
+  }, [_c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -1600,7 +1697,40 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('div', {
       staticClass: "word-card card"
     }, [_vm._m(0, true)])
-  }))])
+  }))])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isEditMode),
+      expression: "isEditMode"
+    }],
+    staticClass: "container word-input-container",
+    attrs: {
+      "id": "Editor"
+    }
+  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label is-pulled-left"
+  }, [_vm._v("Example")]), _vm._v(" "), _c('span', {
+    staticClass: "icon plus is-large",
+    on: {
+      "click": _vm.addExample
+    }
+  }, [_vm._v("＋")]), _vm._v(" "), _c('p', {
+    staticClass: "control",
+    attrs: {
+      "id": "example-control"
+    }
+  }, _vm._l((_vm.range), function(n) {
+    return _c('input', {
+      staticClass: "input example-input",
+      attrs: {
+        "type": "text",
+        "placeholder": "Example"
+      }
+    })
+  }))])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card-content"
@@ -1610,13 +1740,51 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "word-type"
   }, [_vm._v("figurative")]), _vm._v(" "), _c('p', {
     staticClass: "word-definition"
-  }, [_vm._v("\n                            A playing card with a single spot on it, ranked as the highest card in its suit in most card games.\n                        ")]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v("\n                                        A playing card with a single spot on it, ranked as the highest card in its suit in most card games.\n                                    ")]), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "word-example-title"
-  }, [_vm._v("\n                                Example:\n                            ")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("\n                                            Example:\n                                        ")]), _vm._v(" "), _c('span', {
     staticClass: "word-example"
-  }, [_vm._v("\n                                He picked up his cards, finding the ace of diamonds he tossed it on the pile.\n                            ")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("\n                                            He picked up his cards, finding the ace of diamonds he tossed it on the pile.\n                                        ")]), _vm._v(" "), _c('span', {
     staticClass: "word-more-examples is-pulled-right"
-  }, [_vm._v("\n                                More examples...\n                            ")])])])])
+  }, [_vm._v("\n                                            More examples...\n                                        ")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "control back-control"
+  }, [_c('a', {
+    staticClass: "button is-medium"
+  }, [_c('span', {
+    staticClass: "icon is-small"
+  }, [_c('i', {
+    staticClass: "fa fa-arrow-left"
+  })]), _vm._v(" "), _c('span', [_vm._v("Back To Words")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label"
+  }, [_vm._v("Word/Phrasal Verb")]), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter a word or phrasal verb"
+    }
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "field"
+  }, [_c('label', {
+    staticClass: "label"
+  }, [_vm._v("Meaning")]), _vm._v(" "), _c('p', {
+    staticClass: "control"
+  }, [_c('input', {
+    staticClass: "input",
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter meaning"
+    }
+  })])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
