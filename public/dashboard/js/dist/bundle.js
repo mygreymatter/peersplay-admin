@@ -383,7 +383,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/profile-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/profile-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] profile-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -421,7 +421,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/vocabulary-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/vocabulary-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] vocabulary-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -463,7 +463,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/help-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/help-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] help-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -497,7 +497,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/main-content.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/main-content.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] main-content.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -535,7 +535,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/navigation.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/navigation.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] navigation.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -573,7 +573,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/quiz-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/quiz-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] quiz-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -607,7 +607,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline/public/dashboard/js/components/title-component.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/dashboard/js/components/title-component.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] title-component.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -649,26 +649,29 @@ module.exports = Component.exports
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_cookie__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_navigation_vue__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_navigation_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_main_content_vue__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_main_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_main_content_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_title_component_vue__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_title_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_title_component_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_profile_component_vue__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_profile_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_profile_component_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_vocabulary_component_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_vocabulary_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_vocabulary_component_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_quiz_component_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_quiz_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_quiz_component_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_help_component_vue__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_help_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_help_component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_navigation_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_navigation_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_main_content_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_main_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_main_content_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_title_component_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_title_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_title_component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_profile_component_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_profile_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_profile_component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_vocabulary_component_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_vocabulary_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_vocabulary_component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_quiz_component_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_quiz_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_quiz_component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_help_component_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_help_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_help_component_vue__);
+
 
 
 
@@ -687,7 +690,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_
 
 const paths = ['/dashboard/profile', '/dashboard/vocabulary', '/dashboard/quiz', '/dashboard/help'];
 
-const routes = [{ path: paths[0], name: 'profile-view', component: __WEBPACK_IMPORTED_MODULE_6__components_profile_component_vue___default.a }, { path: paths[1], name: 'vocabulary-view', component: __WEBPACK_IMPORTED_MODULE_7__components_vocabulary_component_vue___default.a }, { path: paths[2], name: 'quiz-view', component: __WEBPACK_IMPORTED_MODULE_8__components_quiz_component_vue___default.a }, { path: paths[3], name: 'help-view', component: __WEBPACK_IMPORTED_MODULE_9__components_help_component_vue___default.a }];
+const routes = [{ path: paths[0], name: 'profile-view', component: __WEBPACK_IMPORTED_MODULE_7__components_profile_component_vue___default.a }, { path: paths[1], name: 'vocabulary-view', component: __WEBPACK_IMPORTED_MODULE_8__components_vocabulary_component_vue___default.a }, { path: paths[2], name: 'quiz-view', component: __WEBPACK_IMPORTED_MODULE_9__components_quiz_component_vue___default.a }, { path: paths[3], name: 'help-view', component: __WEBPACK_IMPORTED_MODULE_10__components_help_component_vue___default.a }];
 const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["default"]({ mode: 'history', routes });
 
 let isSigningOut;
@@ -698,7 +701,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         msg: 'Dashboard'
     },
     router,
-    components: { TitleComponent: __WEBPACK_IMPORTED_MODULE_5__components_title_component_vue___default.a, Navigation: __WEBPACK_IMPORTED_MODULE_3__components_navigation_vue___default.a, MainContent: __WEBPACK_IMPORTED_MODULE_4__components_main_content_vue___default.a, Profile: __WEBPACK_IMPORTED_MODULE_6__components_profile_component_vue___default.a, Vocabulary: __WEBPACK_IMPORTED_MODULE_7__components_vocabulary_component_vue___default.a, Quiz: __WEBPACK_IMPORTED_MODULE_8__components_quiz_component_vue___default.a, Help: __WEBPACK_IMPORTED_MODULE_9__components_help_component_vue___default.a },
+    components: { TitleComponent: __WEBPACK_IMPORTED_MODULE_6__components_title_component_vue___default.a, Navigation: __WEBPACK_IMPORTED_MODULE_4__components_navigation_vue___default.a, MainContent: __WEBPACK_IMPORTED_MODULE_5__components_main_content_vue___default.a, Profile: __WEBPACK_IMPORTED_MODULE_7__components_profile_component_vue___default.a, Vocabulary: __WEBPACK_IMPORTED_MODULE_8__components_vocabulary_component_vue___default.a, Quiz: __WEBPACK_IMPORTED_MODULE_9__components_quiz_component_vue___default.a, Help: __WEBPACK_IMPORTED_MODULE_10__components_help_component_vue___default.a },
     created() {
         isSigningOut = false;
         firebase.auth().onAuthStateChanged(user => {
@@ -712,7 +715,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
                 if (isSigningOut) {
                     window.cookie.set('remember_me', 0);
                     var url = "/";
-                    $(location).attr('href', url);
+                    __WEBPACK_IMPORTED_MODULE_3_jquery___default()(location).attr('href', url);
                 }
                 console.log('User is not signed in.');
             }
@@ -756,7 +759,6 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         }
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 /* 43 */
@@ -1161,7 +1163,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
         return {
-            msg: 'Dashboard'
+            msg: ''
         };
     }, methods: {
         goHome() {
@@ -1179,6 +1181,116 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1240,14 +1352,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
         return {
             query: '',
             isLoading: false,
+            isSaving: false,
             names: [],
-            canShowWords: true
+            canShowWords: true,
+            isEditMode: false,
+            isWordRequired: false,
+            isMeaningRequired: false,
+            isExampleRequired: false,
+            examples: [],
+            range: 1,
+            wordPhrasal: '',
+            meaning: '',
+            exampleOne: '',
+            exampleTwo: ''
         };
+    }, created() {
+        // Get a reference to the database service
+    }, mounted() {
+        // Extension materialize.css
+
     }, watch: {
         query: function (val) {
             if (val.length >= 2) {
@@ -1261,6 +1391,53 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.names = [];
                 this.canShowWords = true;
             }
+        }, wordPhrasal: function (word) {
+            this.isWordRequired = word.length === 0;
+        }
+    }, methods: {
+        showEditor() {
+            this.isEditMode = !this.isEditMode;
+            this.isSaving = false;
+            console.log("Edit Mode: " + this.isEditMode);
+        }, addExample() {
+            this.range += 1;
+        }, save() {
+            this.isWordRequired = this.wordPhrasal === '';
+            this.isMeaningRequired = this.meaning === '';
+            this.isExampleRequired = this.exampleOne === '';
+
+            if (!this.isWordRequired && !this.isMeaningRequired && !this.isExampleRequired) {
+
+                var instance = this;
+                this.isSaving = true;
+
+                this.wordPhrasal = this.wordPhrasal.toLowerCase();
+
+                if (this.exampleTwo !== '') this.exampleTwo = this.exampleTwo.toLowerCase();
+
+                var item = {
+                    'title': this.wordPhrasal,
+                    'meaning': this.meaning.toLowerCase(),
+                    'example-1': this.exampleOne.toLowerCase(),
+                    'example-2': this.exampleTwo
+                };
+
+                var ref = firebase.database().ref('words/' + this.wordPhrasal);
+                ref.once('value').then(function (snapshot) {
+                    if (snapshot.val() === null) {
+                        ref.set(item);
+                        ref.once('value', function (snapshot) {
+                            console.log(snapshot.val());
+                            if (snapshot.val().word === instance.wordPhrasal) {
+                                instance.isSaving = false;
+                                instance.wordPhrasal = instance.meaning = instance.exampleOne = instance.exampleTwo = '';
+                            }
+                        });
+                    }
+                });
+            }
+
+            //console.log(this.wordPhrasal + ' ' + this.meaning);
         }
     }
 });
@@ -1289,7 +1466,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n#search-input[data-v-3e84c15c]{\n    padding:10px;\n    width:100%;\n    height:40px;\n    background-color: transparent;\n    border: 1px solid;\n    color: #CCC;\n    font-size:20px;\n}\n#search-input[data-v-3e84c15c]:focus{\n  outline:none;\n  color:#000;\n  border: 1px #ccc solid;\n}\n.search-result[data-v-3e84c15c]{\n    border-bottom: 1px #AEAEAE solid;\n    border-right: 1px #AEAEAE solid;\n    border-left: 1px #AEAEAE solid;\n    padding: 5px;\n    font-weight:lighter;\n}\n.card[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\n.box[data-v-3e84c15c],.card-content[data-v-3e84c15c]{\n    padding:1rem;\n}\n.word[data-v-3e84c15c]{\n    font-weight:bold;\n    font-size:24px;\n}\n.word-type[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:blueviolet;\n    font-style:italic;\n    font-size:18px;\n}\n.words-container[data-v-3e84c15c]{\n    margin: 0 20px 0 10px;\n    width:100%;\n}\n.word-card[data-v-3e84c15c]:hover{\n    cursor: pointer;\n}\n.word-example-title[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#616161;\n}\n.word-example[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#000000;\n}\n.word-more-examples[data-v-3e84c15c]{\n    font-weight:300;\n    font-style:italic;\n}\n.word-more-examples[data-v-3e84c15c]:hover{\n    cursor:pointer;\n    color:#AEAEAE;\n}\n", ""]);
+exports.push([module.i, "\n.row[data-v-3e84c15c]{\n    margin-bottom:0;\n}\n#search-input[data-v-3e84c15c]{\n    color: #CCC;\n    font-size:26px;\n    font-weight:lighter;\n}\n#search-input[data-v-3e84c15c]:focus{\n  color:#000;\n}\n.search-result>.word-type[data-v-3e84c15c]{\n    float:right;\n}\n/*\n.search-result{\n    border-bottom: 1px #AEAEAE solid;\n    border-right: 1px #AEAEAE solid;\n    border-left: 1px #AEAEAE solid;\n    border-top: 1px #AEAEAE solid;\n    padding: 5px;\n    margin-bottom:5px;\n    font-weight:lighter;\n    font-size:18px;\n}\n*/\n.card[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\n.box[data-v-3e84c15c],.card-content[data-v-3e84c15c]{\n    padding:1rem;\n}\n.word[data-v-3e84c15c]{\n    font-weight:lighter;\n    font-size:36px;\n    font-family: robotoLight;\n}\n.word-definition[data-v-3e84c15c]{\n    font-size:16px;\n    font-family: robotoLight;\n}\n.word-type[data-v-3e84c15c]{\n    font-weight:bold;\n    color:#03A9F4;\n    font-style:italic;\n    font-size:18px;\n    font-family: robotoThin;\n}\n.words-container[data-v-3e84c15c]{\n    margin: 0 20px 0 10px;\n    width:100%;\n}\n.word-card[data-v-3e84c15c]:hover{\n    cursor: pointer;\n}\n.word-example-title[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#616161;\n    font-family: robotoLight;\n    line-height:40px;\n}\n.word-example[data-v-3e84c15c]{\n    font-weight:lighter;\n    color:#000000;\n    font-family: robotoLight;\n}\n.word-more-examples[data-v-3e84c15c]{\n    font-weight:300;\n    font-style:italic;\n    float:right;\n    line-height:40px;\n}\n.word-more-examples[data-v-3e84c15c]:hover{\n    cursor:pointer;\n    color:#AEAEAE;\n}\np.control.back-control[data-v-3e84c15c]{\n    margin-bottom:20px;\n}\n.word-input-container[data-v-3e84c15c]{width:70%;\n}\nspan.icon.plus.is-large[data-v-3e84c15c]{\n    margin-right: 10px;\n    font-weight: lighter;\n    font-size: x-large;\n    margin-left:82%;\n}\nspan.icon.plus.is-large[data-v-3e84c15c]:hover{\n    cursor:pointer;\n}\n.example-input[data-v-3e84c15c]{\n    margin-bottom:10px;\n}\n.icon.is-large[data-v-3e84c15c]{\n    height:1.5rem;\n}\na#save[data-v-3e84c15c]{\n    width:15%;\n}\ndiv#search-bar[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\ninput.editor-input[data-v-3e84c15c]{\n    margin-bottom:5px;\n}\n.error[data-v-3e84c15c]{\n    font-size: 10px;\n    color:red;\n}\ninput.error[data-v-3e84c15c]{\n    border-bottom: 1px solid red;\n    box-shadow: 0 1px 0 0 red;\n}\ninput.error-input[data-v-3e84c15c]{\n    border-bottom: 1px solid red;\n    box-shadow: 0 1px 0 0 red;\n}\nbutton#save[data-v-3e84c15c]{\n    padding: 0 15px 0 15px;\n}\n", ""]);
 
 // exports
 
@@ -1552,15 +1729,30 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    staticClass: "columns"
+    staticClass: "container"
   }, [_c('div', {
-    staticClass: "column is-half is-offset-one-quarter"
-  }, [_c('div', [_c('p', {
-    staticClass: "control has-icons-right",
-    class: {
-      'is-loading': _vm.isLoading
+    staticClass: "row"
+  }, [_c('form', {
+    staticClass: "col s12"
+  }, [_c('div', {
+    staticClass: "col s12 valign-wrapper"
+  }, [_c('div', {
+    staticClass: "fixed-action-btn"
+  }, [_c('a', {
+    staticClass: "btn-floating btn-large waves-effect waves-light red",
+    on: {
+      "click": _vm.showEditor
     }
-  }, [_c('input', {
+  }, [_c('i', {
+    staticClass: "material-icons"
+  }, [_vm._v("add")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "input-field col l12",
+    attrs: {
+      "id": "search-bar"
+    }
+  }, [_c('i', {
+    staticClass: "material-icons prefix"
+  }, [_vm._v("search")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -1569,9 +1761,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "input",
     attrs: {
-      "type": "text",
       "id": "search-input",
-      "placeholder": "Search here..."
+      "type": "text",
+      "placeholder": "Type word"
     },
     domProps: {
       "value": (_vm.query)
@@ -1582,26 +1774,244 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.query = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "results"
+  })])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col l12"
   }, [_c('ul', _vm._l((_vm.names), function(name) {
     return _c('li', [_c('div', {
+      staticClass: "word-card card hoverable"
+    }, [_c('div', {
+      staticClass: "card-content"
+    }, [_c('div', {
       staticClass: "search-result"
-    }, [_vm._v("\n                              " + _vm._s(name) + "\n                        ")])])
-  }))])])]), _vm._v(" "), _c('div', {
+    }, [_c('span', {
+      staticClass: "word"
+    }, [_vm._v(_vm._s(name))]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('p', {
+      staticClass: "word-definition"
+    }, [_vm._v("\n                                            A playing card with a single spot on it, ranked as the highest card in its suit in most card games.\n                                        ")]), _vm._v(" "), _vm._m(1, true)])])])])
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col s12",
+    attrs: {
+      "id": "list-words-container"
+    }
+  }, [_c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
       value: (_vm.canShowWords),
       expression: "canShowWords"
     }],
-    staticClass: "container words-container"
-  }, _vm._l((20), function(n) {
+    staticClass: "words-container"
+  }, _vm._l((5), function(n) {
     return _c('div', {
-      staticClass: "word-card card"
-    }, [_vm._m(0, true)])
-  }))])
+      staticClass: "word-card card hoverable"
+    }, [_vm._m(2, true)])
+  }))])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isEditMode),
+      expression: "isEditMode"
+    }],
+    staticClass: "container word-input-container",
+    attrs: {
+      "id": "Editor"
+    }
+  }, [_c('button', {
+    staticClass: "waves-effect waves-light btn left-align red",
+    attrs: {
+      "id": "save",
+      "type": "submit"
+    },
+    on: {
+      "click": _vm.showEditor
+    }
+  }, [_c('i', {
+    staticClass: "material-icons left"
+  }, [_vm._v("keyboard_arrow_left")]), _vm._v("\n                Back\n            ")]), _vm._v(" "), _c('form', {
+    staticClass: "col s12",
+    attrs: {
+      "id": "form",
+      "novalidate": "novalidate"
+    },
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.wordPhrasal),
+      expression: "wordPhrasal"
+    }],
+    staticClass: "validate editor-input",
+    class: {
+      'error-input': _vm.isWordRequired
+    },
+    attrs: {
+      "id": "word-phrase",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.wordPhrasal)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.wordPhrasal = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "word-phrase"
+    }
+  }, [_vm._v("Word/Phrasal Verb")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row",
+    class: {
+      'hide': !_vm.isWordRequired
+    }
+  }, [_vm._m(3)]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.meaning),
+      expression: "meaning"
+    }],
+    staticClass: "validate editor-input",
+    class: {
+      'error-input': _vm.isMeaningRequired
+    },
+    attrs: {
+      "id": "word-phrase-meaning",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.meaning)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.meaning = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "word-phrase-meaning"
+    }
+  }, [_vm._v("Meaning")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row",
+    class: {
+      'hide': !_vm.isMeaningRequired
+    }
+  }, [_vm._m(4)]), _vm._v(" "), _vm._m(5), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.exampleOne),
+      expression: "exampleOne"
+    }],
+    staticClass: "input example-input editor-input",
+    class: {
+      'error-input': _vm.isExampleRequired
+    },
+    attrs: {
+      "id": "example-one",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.exampleOne)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.exampleOne = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "example-one"
+    }
+  }, [_vm._v("Example 1")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row",
+    class: {
+      'hide': !_vm.isExampleRequired
+    }
+  }, [_vm._m(6)]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.exampleTwo),
+      expression: "exampleTwo"
+    }],
+    staticClass: "input example-input editor-input",
+    attrs: {
+      "id": "example-two",
+      "type": "text"
+    },
+    domProps: {
+      "value": (_vm.exampleTwo)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.exampleTwo = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "example-two"
+    }
+  }, [_vm._v("Example 2")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12 right-align"
+  }, [_c('button', {
+    staticClass: "waves-effect waves-light btn right-align",
+    class: {
+      'is-loading': _vm.isSaving
+    },
+    attrs: {
+      "id": "save",
+      "type": "submit"
+    }
+  }, [_vm._v("Save")])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "word-type"
+  }, [_c('i', {
+    staticClass: "material-icons"
+  }, [_vm._v("add")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', [_c('span', {
+    staticClass: "word-example-title"
+  }, [_vm._v("\n                                                    Example:\n                                            ")]), _vm._v(" "), _c('span', {
+    staticClass: "word-example"
+  }, [_vm._v("\n                                                He picked up his cards, finding the ace of diamonds he tossed it on the pile.\n                                            ")]), _vm._v(" "), _c('span', {
+    staticClass: "word-more-examples"
+  }, [_vm._v("\n                                                More examples...\n                                            ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card-content"
   }, [_c('div', [_c('span', {
@@ -1610,13 +2020,39 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "word-type"
   }, [_vm._v("figurative")]), _vm._v(" "), _c('p', {
     staticClass: "word-definition"
-  }, [_vm._v("\n                            A playing card with a single spot on it, ranked as the highest card in its suit in most card games.\n                        ")]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v("\n                                                A playing card with a single spot on it, ranked as the highest card in its suit in most card games.\n                                            ")]), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "word-example-title"
-  }, [_vm._v("\n                                Example:\n                            ")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("\n                                                    Example:\n                                                ")]), _vm._v(" "), _c('span', {
     staticClass: "word-example"
-  }, [_vm._v("\n                                He picked up his cards, finding the ace of diamonds he tossed it on the pile.\n                            ")]), _vm._v(" "), _c('span', {
-    staticClass: "word-more-examples is-pulled-right"
-  }, [_vm._v("\n                                More examples...\n                            ")])])])])
+  }, [_vm._v("\n                                                    He picked up his cards, finding the ace of diamonds he tossed it on the pile.\n                                                ")]), _vm._v(" "), _c('span', {
+    staticClass: "word-more-examples"
+  }, [_vm._v("\n                                                    More examples...\n                                                ")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col s12"
+  }, [_c('span', {
+    staticClass: "error"
+  }, [_vm._v("Word or phrasal verb is required.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col s12"
+  }, [_c('span', {
+    staticClass: "error"
+  }, [_vm._v("The meaning of the word is required.")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('h5', {
+    staticClass: "left-align"
+  }, [_vm._v("Examples")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col s12"
+  }, [_c('span', {
+    staticClass: "error"
+  }, [_vm._v("At least one example is required.")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueCookie from 'vue-cookie';
 import VueRouter from 'vue-router'
+import $ from 'jquery'
 
 Vue.use(VueCookie);
 Vue.use(VueRouter)

@@ -1,6 +1,5 @@
 <template>
     <div>
-        
         <div class="columns"  v-show="canShowViews">
             <div class="column is-hidden-mobile"></div>
             <div class="column">
