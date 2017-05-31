@@ -7,7 +7,7 @@
 export default{
     data(){
         return{
-            msg:'Dashboard'
+            msg:''
         }
     },methods: {
         goHome() {
