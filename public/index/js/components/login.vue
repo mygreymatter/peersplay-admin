@@ -1,108 +1,79 @@
 <template>
     <div>
-        <div class="columns"  v-show="canShowViews">
-            <div class="column is-hidden-mobile"></div>
-            <div class="column">
-                <div class="card authentication-card">
-                    
-                    <footer class="card-footer authentication-header  has-text-centered">
-                        <a class="card-footer-item" :class={isActive:isLoginSelected} @click="showLogin">Login</a>
-                        <a class="card-footer-item" :class={isActive:!isLoginSelected} @click="showSignup">Signup</a>
-                    </footer>
+        
+        <div class="container" v-show="canShowViews">
 
-                    <div class="content authentication-content">
-                    
-                        <!-- Login Content - start -->
-                        <div class="columns" id="login-content" v-show="isLoginSelected">
-                            <div class="column">
-                                
-                                <div class="field">
-                                    <label for="username" class="label">Username</label>
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input type="email" name="username" id="emailaddress" tabindex="1" class="input" placeholder="Enter username"  v-model="user.username">
-                                        <span class="icon is-small is-left">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                    </p>
-                                </div>
-                                
-                                <div class="field">
-                                    <label for="password" class="label">Password</label>
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input type="password"  name="password" id="password" tabindex="2" class="input" placeholder="Enter password" v-model="user.password">
-                                        <span class="icon is-small is-left">
-                                            <i class="fa fa-key"></i>
-                                        </span>
-                                    </p>
-                                </div>
-                                
-                                <nav class="level is-flex-touch">
-                                    <p class="level-item has-text-centered">
-                                        <button class="button is-primary" @click="login">Login</button>
-                                    </p>
-                                    <p class="level-item has-text-centered">
-                                        <button class="button is-primary">Cancel</button>
-                                    </p>
-                                </nav>
+            <div class="row">
 
+                <div class="col l1"></div>
+                <div class="col l10">
+                    <div class="card hoverable">
+                        <div class="car-action">
+                            <div class="row auth-header">
+                                <div class="col s6 center-align auth-button">
+                                    <a class="waves-effect waves-light" :class={isActive:isLoginSelected} @click="showLogin">Login</a>
+                                </div>
+                                <div class="col s6 center-align auth-button">
+                                    <a class="waves-effect waves-light":class={isActive:!isLoginSelected} @click="showSignup">Signup</a>
+                                </div>
                             </div>
                         </div>
-                        <!-- Login Content - end -->
+                        <div class="card-content">
 
+                            <div class="row">
+                                <form action="" class="col s12">
+                                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">email</i>
+                                            <input placeholder="Email address" id="emailaddress" name="emailaddress" type="email" class="validate" tabindex="1" v-model="user.username">
+                                            <label for="emailaddress">Email address</label>
+                                        </div>
+                                    </div>
 
-                        <!-- Signup Content - start -->
-                        <div class="columns" id="signup-content" v-show="!isLoginSelected">
-                            <div class="column">
-                                
-                                <div class="field">
-                                    <label for="username" class="label">Username</label>
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input type="email" name="username" id="emailaddress" tabindex="1" class="input" placeholder="Enter username"  v-model="user.username">
-                                        <span class="icon is-small is-left">
-                                            <i class="fa fa-user"></i>
-                                        </span>
-                                    </p>
-                                </div>
-                                
-                                <div class="field">
-                                    <label for="password" class="label">Password</label>
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input type="password" name="password" id="password" tabindex="2" class="input" placeholder="Enter password"  v-model="user.password">
-                                        <span class="icon is-small is-left">
-                                            <i class="fa fa-key"></i>
-                                        </span>
-                                    </p>
-                                </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">vpn_key</i>
+                                            <input placeholder="Password" id="password" name="password" type="password" tabindex="2" v-model="user.password">
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
 
-                                <div class="field">
-                                    <label for="confirmpassword" class="label">Confirm Password</label>
-                                    <p class="control has-icons-left has-icons-right">
-                                        <input type="password" name="password" id="password" tabindex="3" class="input" placeholder="Reenter password"  v-model="user.confirmPassword">
-                                        <span class="icon is-small is-left">
-                                            <i class="fa fa-key"></i>
-                                        </span>
-                                    </p>
-                                </div>
-                                
-                                <nav class="level is-flex-touch">
-                                    <p class="level-item has-text-centered">
-                                        <button class="button is-primary" @click="signup">Signup</button>
-                                    </p>
-                                    <p class="level-item has-text-centered">
-                                        <button class="button is-primary">Cancel</button>
-                                    </p>
-                                </nav>
+                                    <div class="row" v-show="!isLoginSelected">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">vpn_key</i>
+                                            <input placeholder="Confirm Password" id="confirm-password" name="confirm-password" type="password" tabindex="3" v-model="user.confirmPassword">
+                                            <label for="password">Confirm Password</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col s6 center-align">
+                                            <a class="waves-effect waves-light btn">Cancel</a>
+                                        </div>
+
+                                        <div class="col s6 center-align" v-show="isLoginSelected">
+                                            <a class="waves-effect waves-light btn" @click="login">Login</a>
+                                        </div>
+
+                                        <div class="col s6 center-align" v-show="!isLoginSelected">
+                                            <a class="waves-effect waves-light btn" @click="signup">Signup</a>
+                                        </div>
+                                    
+                                    </div>
+
+                                </form>
 
                             </div>
-                        </div>
-                        <!-- Signup Content - end -->
 
+                        </div>
                     </div>
-                    <!-- content - end -->
                 </div>
-                <!-- card - end -->
+                <div class="col l1"></div>
+
             </div>
-            <div class="column is-hidden-mobile"></div>
+
         </div>
         
 
@@ -239,46 +210,31 @@ const router = new VueRouter({
 
 <style>
 
-.main-container{
-    margin-top:4%;
-    padding:5%;
-}
-
-.authentication-header a{
-    color:#AEAEAE;
-}
-
-.authentication-header a:hover{
-    color:#000000;
-}
-
-footer.card-footer.authentication-header{
-    border-bottom:1px solid #dbdbdb;
-    border-top:0px;
-}
-
-.authentication-content{
-    padding:10px;
-    padding-bottom:0;
-}
-
-p.control.has-icons-left,
-p.level-item.has-text-centered,
-div#login-content,
-div#signup-content{
+.card-content .row,.row.auth-header{
     margin-bottom:0;
 }
 
-.authentication-content button.button.is-primary{
-    width:120px;
-}
-.authentication-content nav{
-    padding-left:10%;
-    padding-right:10%;
+.card-content i.material-icons.prefix{
+    margin-top:5px;
 }
 
-a.card-footer-item.isActive{
-    color:#333;
+.auth-header{
+    padding:10px;
+}
+
+.auth-button>a.waves-effect.waves-light{
+    padding:5px;
+    font-size:larger;
+    width:100%;
+    color: #AEAEAE;
+}
+
+.auth-button>a.waves-effect.waves-light:hover{
+    color: #5E5E5E;
+}
+.auth-button>a.waves-effect.waves-light.isActive{
+    border-bottom:1px solid #5E5E5E;
+    color: #5E5E5E;
 }
 
 @media only screen and (min-width: 768px){

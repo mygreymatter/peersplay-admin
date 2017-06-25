@@ -650,12 +650,12 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_cookie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_navigation_vue__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_navigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_navigation_vue__);
@@ -722,6 +722,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         });
     },
     mounted() {
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()(document).ready(function () {});
         console.log('Dashboard Mounted: ' + router.currentRoute.path);
         window.cookie = this.$cookie;
         console.log('Current Path: ' + router.currentRoute.path);
@@ -786,9 +787,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_component_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile_component_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__profile_component_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vocabulary_component_vue__ = __webpack_require__(11);
@@ -831,9 +832,9 @@ const router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["default"]({ mode: '
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(3);
 //
 //
 //
@@ -956,38 +957,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
         return {
-            isEditMode: false
+            isEditMode: false,
+            modeLabel: 'Edit',
+            user: {
+                name: '',
+                emailaddress: ''
+            }
         };
     }, methods: {
-        editProfle() {
-            this.isEditMode = true;
+        editProfile() {
+            this.isEditMode = !this.isEditMode;
+            this.modeLabel = this.isEditMode ? "Save" : "Edit";
         }, cancel() {
             this.isEditMode = false;
         }, save() {
@@ -1173,7 +1158,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 49 */
@@ -1181,7 +1166,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 //
 //
@@ -1494,7 +1479,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n.profile-container[data-v-79f7138d],.profile-edit-container[data-v-79f7138d]{\n    width:60%;\n}\n.name-label[data-v-79f7138d]{\n    font-size:larger;\n}\n.edit-profile[data-v-79f7138d],.profile-image-change[data-v-79f7138d],.cancel[data-v-79f7138d],.save[data-v-79f7138d]{\n    cursor:pointer;\n}\n.cancel[data-v-79f7138d]:hover,.save[data-v-79f7138d]:hover{\n    color:#AEAEAE;\n}\n.profile-image-change[data-v-79f7138d]:hover{\n    color:#AEAEAE;\n}\n.profile-image-change[data-v-79f7138d]{\n    background:cadetblue;\n}\nspan.name[data-v-79f7138d]{\n    padding-top: 2px;\n    padding-left: 10px;\n}\n.profile-input-content[data-v-79f7138d]{\n    margin-top:10px;\n}\n", ""]);
+exports.push([module.i, "\n.row[data-v-79f7138d]{\n    margin-bottom:0;\n}\n.profile[data-v-79f7138d]{\n    padding:10px;\n}\n.profile-card[data-v-79f7138d]{\n    padding:10px 10px 10px 10px;\n}\n.profile[data-v-79f7138d],.profile>.col.s9[data-v-79f7138d]{\n    height:170px;\n}\n.name-label[data-v-79f7138d]{\n    font-size:larger;\n}\nspan.name[data-v-79f7138d]{\n    padding-top: 2px;\n    padding-left: 10px;\n    color:#FF5722;\n}\n.subscription-change[data-v-79f7138d]{\n    margin-left:10px;\n}\n.subscription-change[data-v-79f7138d]:hover{\n    cursor:pointer;\n}\ninput[type=date][data-v-79f7138d]{\n    width:100%;\n    margin-bottom:0;\n}\ninput[type=date][data-v-79f7138d]::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n    display: none;\n}\n.datepick>.input-field.col.s9[data-v-79f7138d]{\n    margin-top:0;\n}\n\n", ""]);
 
 // exports
 
@@ -1729,6 +1714,12 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isEditMode),
+      expression: "!isEditMode"
+    }],
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
@@ -2108,155 +2099,150 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (!_vm.isEditMode),
-      expression: "!isEditMode"
-    }],
-    staticClass: "container profile-container"
+    staticClass: "container"
   }, [_c('div', {
-    staticClass: "card"
+    staticClass: "row"
   }, [_c('div', {
+    staticClass: "col l1"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "col l10"
+  }, [_c('div', {
+    staticClass: "card hoverable profile-card"
+  }, [_c('div', {
+    staticClass: "right-align"
+  }, [_c('a', {
+    staticClass: "waves-light waves-effect btn",
+    on: {
+      "click": _vm.editProfile
+    }
+  }, [_vm._v(_vm._s(_vm.modeLabel))])]), _vm._v(" "), _c('div', {
     staticClass: "card-content"
-  }, [_c('span', {
-    staticClass: "edit-profile is-medium is-pulled-right",
-    on: {
-      "click": _vm.editProfle
-    }
-  }, [_vm._v("\n                    Edit\n                ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isEditMode),
-      expression: "isEditMode"
-    }],
-    staticClass: "container profile-edit-container"
   }, [_c('div', {
-    staticClass: "card"
-  }, [_vm._m(3), _vm._v(" "), _c('footer', {
-    staticClass: "card-footer"
-  }, [_c('span', {
-    staticClass: "card-footer-item has-text-centered cancel",
+    staticClass: "row profile"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "col s9 valign-wrapper"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.user.name),
+      expression: "user.name"
+    }],
+    staticClass: "input-field",
+    attrs: {
+      "type": "text",
+      "placeholder": "Your Name",
+      "tabindex": "1"
+    },
+    domProps: {
+      "value": (_vm.user.name)
+    },
     on: {
-      "click": _vm.cancel
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.user.name = $event.target.value
+      }
     }
-  }, [_vm._v("Cancel")]), _vm._v(" "), _c('span', {
-    staticClass: "card-footer-item has-text-centered save",
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Your Name")])]), _vm._v(" "), _c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.user.emailaddress),
+      expression: "user.emailaddress"
+    }],
+    staticClass: "input-field",
+    attrs: {
+      "type": "email",
+      "placeholder": "Email Address",
+      "tabindex": "2"
+    },
+    domProps: {
+      "value": (_vm.user.emailaddress)
+    },
     on: {
-      "click": _vm.save
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.user.emailaddress = $event.target.value
+      }
     }
-  }, [_vm._v("Save")])])])])])
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": ""
+    }
+  }, [_vm._v("Email Address")])])])])]), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c('div', {
+    staticClass: "col l1"
+  })])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "media"
-  }, [_c('div', {
-    staticClass: "media-left"
-  }, [_c('figure', {
-    staticClass: "image is-96x96"
+    staticClass: "col s3"
   }, [_c('img', {
+    staticClass: "circle responsive-img",
     attrs: {
-      "src": "http://bulma.io/images/placeholders/128x128.png",
-      "alt": "Image"
+      "src": "images/yuna.jpg",
+      "alt": ""
     }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "media-content"
-  }, [_c('p', {
-    staticClass: "title is-4"
-  }, [_vm._v("Mahayogi Lakshmipathi")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle is-6"
-  }, [_vm._v("mygreymatter@gmail.com")])])])
+  })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "content"
-  }, [_c('p', [_c('span', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col s12"
+  }, [_c('div', {
+    staticClass: "row datepick"
+  }, [_c('div', {
+    staticClass: "input-field col s3"
+  }, [_c('span', {
     staticClass: "name-label"
-  }, [_vm._v("Date Of Birth:")]), _vm._v(" "), _c('span', {
-    staticClass: "name"
-  }, [_vm._v("06-04-1985")])]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v("Date of Birth:")])]), _vm._v(" "), _c('div', {
+    staticClass: "input-field col s9"
+  }, [_c('input', {
+    attrs: {
+      "type": "date",
+      "required": ""
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col s12 input-field"
+  }, [_c('p', [_c('span', {
     staticClass: "name-label"
   }, [_vm._v("Subscription:")]), _vm._v(" "), _c('span', {
     staticClass: "name"
   }, [_vm._v("Not subscribed")]), _vm._v(" "), _c('span', {
-    staticClass: "subscription-change button is-small"
-  }, [_vm._v("Change")])])])
+    staticClass: "subscription-change"
+  }, [_c('a', {
+    staticClass: "waves-light"
+  }, [_vm._v("Change")])])])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('footer', {
-    staticClass: "card-footer"
+  return _c('div', {
+    staticClass: "row top-border"
+  }, [_c('div', {
+    staticClass: "col s6"
   }, [_c('p', {
-    staticClass: "card-footer-item has-text-centered"
+    staticClass: "center-align"
   }, [_c('span', {
     staticClass: "name-label"
   }, [_vm._v("Quizes Played:")]), _vm._v(" "), _c('span', {
     staticClass: "name"
-  }, [_vm._v("5")])]), _vm._v(" "), _c('p', {
-    staticClass: "card-footer-item has-text-centered"
+  }, [_vm._v("5")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col s6"
+  }, [_c('p', {
+    staticClass: "center-align"
   }, [_c('span', {
     staticClass: "name-label"
   }, [_vm._v("Quizes Won:")]), _vm._v(" "), _c('span', {
     staticClass: "name"
-  }, [_vm._v("5")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "card-content"
-  }, [_c('div', {
-    staticClass: "media"
-  }, [_c('div', {
-    staticClass: "media-left has-text-centered profile-image-change"
-  }, [_c('figure', {
-    staticClass: "image is-96x97"
-  }, [_c('img', {
-    attrs: {
-      "src": "http://bulma.io/images/placeholders/128x128.png",
-      "alt": "Image"
-    }
-  })]), _vm._v(" "), _c('span', {}, [_vm._v("change")])]), _vm._v(" "), _c('div', {
-    staticClass: "media-content profile-input-content"
-  }, [_c('div', {
-    staticClass: "field"
-  }, [_c('p', {
-    staticClass: "control profile-input"
-  }, [_c('input', {
-    staticClass: "input",
-    attrs: {
-      "type": "text",
-      "placeholder": "First Name"
-    }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('p', {
-    staticClass: "control profile-input"
-  }, [_c('input', {
-    staticClass: "input",
-    attrs: {
-      "type": "text",
-      "placeholder": "Middle Name(optional)"
-    }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('p', {
-    staticClass: "control profile-input"
-  }, [_c('input', {
-    staticClass: "input",
-    attrs: {
-      "type": "text",
-      "placeholder": "Last Name"
-    }
-  })])])])]), _vm._v(" "), _c('div', {
-    staticClass: "card-content"
-  }, [_c('div', {
-    staticClass: "field"
-  }, [_c('p', {
-    staticClass: "control"
-  }, [_c('span', {
-    staticClass: "name-label"
-  }, [_vm._v("Date Of Birth: ")]), _vm._v(" "), _c('input', {
-    staticClass: "input",
-    attrs: {
-      "type": "date",
-      "name": "bday"
-    }
-  })])])])])
+  }, [_vm._v("5")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

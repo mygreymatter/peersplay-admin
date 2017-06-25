@@ -54,7 +54,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: "#app",
     data: {
-        msg: 'Welcome To PeersPlay'
+        msg: 'Welcome To Planet Mentor'
     },
     components: {
         Login: __WEBPACK_IMPORTED_MODULE_1__components_login_vue___default.a
@@ -75,35 +75,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_cookie__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_cookie__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -319,7 +290,7 @@ exports = module.exports = __webpack_require__(36)(undefined);
 
 
 // module
-exports.push([module.i, "\n.main-container{\n    margin-top:4%;\n    padding:5%;\n}\n.authentication-header a{\n    color:#AEAEAE;\n}\n.authentication-header a:hover{\n    color:#000000;\n}\nfooter.card-footer.authentication-header{\n    border-bottom:1px solid #dbdbdb;\n    border-top:0px;\n}\n.authentication-content{\n    padding:10px;\n    padding-bottom:0;\n}\np.control.has-icons-left,\np.level-item.has-text-centered,\ndiv#login-content,\ndiv#signup-content{\n    margin-bottom:0;\n}\n.authentication-content button.button.is-primary{\n    width:120px;\n}\n.authentication-content nav{\n    padding-left:10%;\n    padding-right:10%;\n}\na.card-footer-item.isActive{\n    color:#333;\n}\n@media only screen and (min-width: 768px){\n.main-container{\n        margin-top:4%;\n        padding:2%;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.card-content .row,.row.auth-header{\n    margin-bottom:0;\n}\n.card-content i.material-icons.prefix{\n    margin-top:5px;\n}\n.auth-header{\n    padding:10px;\n}\n.auth-button>a.waves-effect.waves-light{\n    padding:5px;\n    font-size:larger;\n    width:100%;\n    color: #AEAEAE;\n}\n.auth-button>a.waves-effect.waves-light:hover{\n    color: #5E5E5E;\n}\n.auth-button>a.waves-effect.waves-light.isActive{\n    border-bottom:1px solid #5E5E5E;\n    color: #5E5E5E;\n}\n@media only screen and (min-width: 768px){\n.main-container{\n        margin-top:4%;\n        padding:2%;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -478,69 +449,68 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.canShowViews),
       expression: "canShowViews"
     }],
-    staticClass: "columns"
+    staticClass: "container"
   }, [_c('div', {
-    staticClass: "column is-hidden-mobile"
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col l1"
   }), _vm._v(" "), _c('div', {
-    staticClass: "column"
+    staticClass: "col l10"
   }, [_c('div', {
-    staticClass: "card authentication-card"
-  }, [_c('footer', {
-    staticClass: "card-footer authentication-header  has-text-centered"
+    staticClass: "card hoverable"
+  }, [_c('div', {
+    staticClass: "car-action"
+  }, [_c('div', {
+    staticClass: "row auth-header"
+  }, [_c('div', {
+    staticClass: "col s6 center-align auth-button"
   }, [_c('a', {
-    staticClass: "card-footer-item",
+    staticClass: "waves-effect waves-light",
     class: {
       isActive: _vm.isLoginSelected
     },
     on: {
       "click": _vm.showLogin
     }
-  }, [_vm._v("Login")]), _vm._v(" "), _c('a', {
-    staticClass: "card-footer-item",
+  }, [_vm._v("Login")])]), _vm._v(" "), _c('div', {
+    staticClass: "col s6 center-align auth-button"
+  }, [_c('a', {
+    staticClass: "waves-effect waves-light",
     class: {
       isActive: !_vm.isLoginSelected
     },
     on: {
       "click": _vm.showSignup
     }
-  }, [_vm._v("Signup")])]), _vm._v(" "), _c('div', {
-    staticClass: "content authentication-content"
+  }, [_vm._v("Signup")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "card-content"
   }, [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isLoginSelected),
-      expression: "isLoginSelected"
-    }],
-    staticClass: "columns",
+    staticClass: "row"
+  }, [_c('form', {
+    staticClass: "col s12",
     attrs: {
-      "id": "login-content"
+      "action": ""
     }
   }, [_c('div', {
-    staticClass: "column"
+    staticClass: "row"
   }, [_c('div', {
-    staticClass: "field"
-  }, [_c('label', {
-    staticClass: "label",
-    attrs: {
-      "for": "username"
-    }
-  }, [_vm._v("Username")]), _vm._v(" "), _c('p', {
-    staticClass: "control has-icons-left has-icons-right"
-  }, [_c('input', {
+    staticClass: "input-field col s12"
+  }, [_c('i', {
+    staticClass: "material-icons prefix"
+  }, [_vm._v("email")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: (_vm.user.username),
       expression: "user.username"
     }],
-    staticClass: "input",
+    staticClass: "validate",
     attrs: {
-      "type": "email",
-      "name": "username",
+      "placeholder": "Email address",
       "id": "emailaddress",
-      "tabindex": "1",
-      "placeholder": "Enter username"
+      "name": "emailaddress",
+      "type": "email",
+      "tabindex": "1"
     },
     domProps: {
       "value": (_vm.user.username)
@@ -551,29 +521,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.user.username = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('label', {
-    staticClass: "label",
+  }), _vm._v(" "), _c('label', {
     attrs: {
-      "for": "password"
+      "for": "emailaddress"
     }
-  }, [_vm._v("Password")]), _vm._v(" "), _c('p', {
-    staticClass: "control has-icons-left has-icons-right"
-  }, [_c('input', {
+  }, [_vm._v("Email address")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "input-field col s12"
+  }, [_c('i', {
+    staticClass: "material-icons prefix"
+  }, [_vm._v("vpn_key")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: (_vm.user.password),
       expression: "user.password"
     }],
-    staticClass: "input",
     attrs: {
-      "type": "password",
-      "name": "password",
+      "placeholder": "Password",
       "id": "password",
-      "tabindex": "2",
-      "placeholder": "Enter password"
+      "name": "password",
+      "type": "password",
+      "tabindex": "2"
     },
     domProps: {
       "value": (_vm.user.password)
@@ -584,117 +554,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.user.password = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _c('nav', {
-    staticClass: "level is-flex-touch"
-  }, [_c('p', {
-    staticClass: "level-item has-text-centered"
-  }, [_c('button', {
-    staticClass: "button is-primary",
-    on: {
-      "click": _vm.login
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "password"
     }
-  }, [_vm._v("Login")])]), _vm._v(" "), _vm._m(2)])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Password")])])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
       value: (!_vm.isLoginSelected),
       expression: "!isLoginSelected"
     }],
-    staticClass: "columns",
-    attrs: {
-      "id": "signup-content"
-    }
+    staticClass: "row"
   }, [_c('div', {
-    staticClass: "column"
-  }, [_c('div', {
-    staticClass: "field"
-  }, [_c('label', {
-    staticClass: "label",
-    attrs: {
-      "for": "username"
-    }
-  }, [_vm._v("Username")]), _vm._v(" "), _c('p', {
-    staticClass: "control has-icons-left has-icons-right"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.user.username),
-      expression: "user.username"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "email",
-      "name": "username",
-      "id": "emailaddress",
-      "tabindex": "1",
-      "placeholder": "Enter username"
-    },
-    domProps: {
-      "value": (_vm.user.username)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.user.username = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _vm._m(3)])]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('label', {
-    staticClass: "label",
-    attrs: {
-      "for": "password"
-    }
-  }, [_vm._v("Password")]), _vm._v(" "), _c('p', {
-    staticClass: "control has-icons-left has-icons-right"
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.user.password),
-      expression: "user.password"
-    }],
-    staticClass: "input",
-    attrs: {
-      "type": "password",
-      "name": "password",
-      "id": "password",
-      "tabindex": "2",
-      "placeholder": "Enter password"
-    },
-    domProps: {
-      "value": (_vm.user.password)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.user.password = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _vm._m(4)])]), _vm._v(" "), _c('div', {
-    staticClass: "field"
-  }, [_c('label', {
-    staticClass: "label",
-    attrs: {
-      "for": "confirmpassword"
-    }
-  }, [_vm._v("Confirm Password")]), _vm._v(" "), _c('p', {
-    staticClass: "control has-icons-left has-icons-right"
-  }, [_c('input', {
+    staticClass: "input-field col s12"
+  }, [_c('i', {
+    staticClass: "material-icons prefix"
+  }, [_vm._v("vpn_key")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: (_vm.user.confirmPassword),
       expression: "user.confirmPassword"
     }],
-    staticClass: "input",
     attrs: {
+      "placeholder": "Confirm Password",
+      "id": "confirm-password",
+      "name": "confirm-password",
       "type": "password",
-      "name": "password",
-      "id": "password",
-      "tabindex": "3",
-      "placeholder": "Reenter password"
+      "tabindex": "3"
     },
     domProps: {
       "value": (_vm.user.confirmPassword)
@@ -705,59 +593,46 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.user.confirmPassword = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(5)])]), _vm._v(" "), _c('nav', {
-    staticClass: "level is-flex-touch"
-  }, [_c('p', {
-    staticClass: "level-item has-text-centered"
-  }, [_c('button', {
-    staticClass: "button is-primary",
+  }), _vm._v(" "), _c('label', {
+    attrs: {
+      "for": "password"
+    }
+  }, [_vm._v("Confirm Password")])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.isLoginSelected),
+      expression: "isLoginSelected"
+    }],
+    staticClass: "col s6 center-align"
+  }, [_c('a', {
+    staticClass: "waves-effect waves-light btn",
+    on: {
+      "click": _vm.login
+    }
+  }, [_vm._v("Login")])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.isLoginSelected),
+      expression: "!isLoginSelected"
+    }],
+    staticClass: "col s6 center-align"
+  }, [_c('a', {
+    staticClass: "waves-effect waves-light btn",
     on: {
       "click": _vm.signup
     }
-  }, [_vm._v("Signup")])]), _vm._v(" "), _vm._m(6)])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "column is-hidden-mobile"
-  })])])
+  }, [_vm._v("Signup")])])])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col l1"
+  })])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "icon is-small is-left"
-  }, [_c('i', {
-    staticClass: "fa fa-user"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "icon is-small is-left"
-  }, [_c('i', {
-    staticClass: "fa fa-key"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "level-item has-text-centered"
-  }, [_c('button', {
-    staticClass: "button is-primary"
-  }, [_vm._v("Cancel")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "icon is-small is-left"
-  }, [_c('i', {
-    staticClass: "fa fa-user"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "icon is-small is-left"
-  }, [_c('i', {
-    staticClass: "fa fa-key"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "icon is-small is-left"
-  }, [_c('i', {
-    staticClass: "fa fa-key"
-  })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "level-item has-text-centered"
-  }, [_c('button', {
-    staticClass: "button is-primary"
+  return _c('div', {
+    staticClass: "col s6 center-align"
+  }, [_c('a', {
+    staticClass: "waves-effect waves-light btn"
   }, [_vm._v("Cancel")])])
 }]}
 module.exports.render._withStripped = true
