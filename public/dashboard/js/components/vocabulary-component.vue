@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <div class="container">
+        <div class="container" v-show="!isEditMode">
             
                 <div class="row">
                     <form class="col s12">

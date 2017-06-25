@@ -60,6 +60,9 @@ new Vue({
         });
     },
     mounted() {
+        $(document).ready(function() {
+
+        });
         console.log('Dashboard Mounted: ' + router.currentRoute.path);
         window.cookie = this.$cookie;
         console.log('Current Path: ' + router.currentRoute.path);

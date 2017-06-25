@@ -1,109 +1,87 @@
 <template>
     <div>
-        <!-- profile container start -->
-        <div class="container profile-container" v-show="!isEditMode">
-            <div class="card">
 
-                <div class="card-content">
-                    <span class="edit-profile is-medium is-pulled-right" @click="editProfle">
-                        Edit
-                    </span>
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-96x96">
-                            <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-                            </figure>
+    <div class="container">
+    
+        <div class="row">
+
+                <div class="col l1"></div>
+                <div class="col l10">
+                    <div class="card hoverable profile-card">
+                        <div class="right-align">
+                            <a class="waves-light waves-effect btn" @click="editProfile">{{modeLabel}}</a>
                         </div>
-                        <div class="media-content">
-                            <p class="title is-4">Mahayogi Lakshmipathi</p>
-                            <p class="subtitle is-6">mygreymatter@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        <p>
-                            <span class="name-label">Date Of Birth:</span>
-                            <span class="name">06-04-1985</span>
-                        </p>
-                        <p>
-                            <span class="name-label">Subscription:</span>
-                            <span class="name">Not subscribed</span>
-                            <span class="subscription-change button is-small">Change</span>
-                        </p>
-                    </div>
-                </div>
-
-                <footer class="card-footer">
-                    <p class="card-footer-item has-text-centered">
-                        <span class="name-label">Quizes Played:</span>
-                        <span class="name">5</span>
-                    </p>
-                    <p class="card-footer-item has-text-centered">
-                        <span class="name-label">Quizes Won:</span>
-                        <span class="name">5</span>
-                    </p>
-                </footer>
-
-            </div>
-        </div>
-        <!-- profile container end -->
-
-        <!-- profile Editor container start -->
-        <div class="container profile-edit-container" v-show="isEditMode">
-        
-            <div class="card">
-
-                <div class="card-content">
-
-                    <div class="media">
-                        <div class="media-left has-text-centered profile-image-change">
-                            <figure class="image is-96x97">
-                            <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-                            </figure>
-                            <span class="">change</span>
-                        </div>
-
-                        <div class="media-content profile-input-content">
-                            <div class="field">
-                                <p class="control profile-input">
-                                    <input class="input"  type="text" placeholder="First Name">
-                                </p>
-                            </div>
+                        <div class="card-content">
                             
-                            <div class="field">
-                                <p class="control profile-input">
-                                    <input class="input"  type="text" placeholder="Middle Name(optional)">
-                                </p>
+                            <div class="row profile">
+                                <div class="col s3">
+                                    <img src="images/yuna.jpg" alt="" class="circle responsive-img">
+                                </div>
+                                <div class="col s9 valign-wrapper">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="text" class="input-field" placeholder="Your Name" tabindex="1" v-model="user.name">
+                                            <label for="">Your Name</label>
+                                            
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <input type="email" class="input-field" placeholder="Email Address" tabindex="2" v-model="user.emailaddress">
+                                            <label for="">Email Address</label>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="field">
-                                <p class="control profile-input">
-                                    <input class="input" type="text" placeholder="Last Name">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row datepick">
+                                        <div class="input-field col s3">
+                                           <span class="name-label">Date of Birth:</span>
+                                        </div>
+                                        <div class="input-field col s9">
+                                            <input type="date" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <p>
+                                                <span class="name-label">Subscription:</span>
+                                                <span class="name">Not subscribed</span>
+                                                <span class="subscription-change">
+                                                    <a class="waves-light">Change</a>
+                                                </span>
+                                            </p>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row top-border">
+                            <div class="col s6">
+                                <p class="center-align">
+                                    <span class="name-label">Quizes Played:</span>
+                                    <span class="name">5</span>
+                                </p>    
+                            </div>
+                            <div class="col s6">
+                                <p class="center-align">
+                                    <span class="name-label">Quizes Won:</span>
+                                    <span class="name">5</span>
                                 </p>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card-content">
-                        <div class="field">
-                            <p class="control">
-                                <span class="name-label">Date Of Birth: </span>
-                                <input class="input" type="date" name="bday">
-                            </p>
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
-
-                <footer class="card-footer">
-                    <span class="card-footer-item has-text-centered cancel" @click="cancel">Cancel</span>
-                    <span class="card-footer-item has-text-centered save" @click="save">Save</span>
-                </footer>
-
-            </div>
+                <div class="col l1"></div>
 
         </div>
-        <!-- profile Editor container end -->
+    
+    </div>
         
     </div>
 </template>
@@ -112,11 +90,18 @@
     export default{
         data(){
             return{
-                isEditMode:false
+                isEditMode:false,
+                modeLabel:'Edit',
+                user:{
+                    name:'',
+                    emailaddress:''
+                }
             }
         },methods:{
-            editProfle(){
-                this.isEditMode = true;
+            editProfile(){
+                this.isEditMode = !this.isEditMode;
+                this.modeLabel = this.isEditMode ? "Save" : "Edit";
+
             },cancel(){
                 this.isEditMode = false;
             },save(){
@@ -126,29 +111,45 @@
     }
 </script>
 <style scoped>
-    .profile-container,.profile-edit-container{
-        width:60%;
+    .row{
+        margin-bottom:0;
     }
+    .profile{
+        padding:10px;
+    }
+
+    .profile-card{
+        padding:10px 10px 10px 10px;
+    }
+
+    .profile,.profile>.col.s9{
+        height:170px;
+    }
+
     .name-label{
         font-size:larger;
-    }
-    .edit-profile,.profile-image-change,.cancel,.save{
-        cursor:pointer;
-    }
-    .cancel:hover,.save:hover{
-        color:#AEAEAE;
-    }
-    .profile-image-change:hover{
-        color:#AEAEAE;
-    }
-    .profile-image-change{
-        background:cadetblue;
     }
     span.name{
         padding-top: 2px;
         padding-left: 10px;
+        color:#FF5722;
     }
-    .profile-input-content{
-        margin-top:10px;
+    .subscription-change{
+        margin-left:10px;
     }
+    .subscription-change:hover{
+        cursor:pointer;
+    }
+    input[type=date]{
+        width:100%;
+        margin-bottom:0;
+    }
+    input[type=date]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        display: none;
+    }
+    .datepick>.input-field.col.s9{
+        margin-top:0;
+    }
+
 </style>
