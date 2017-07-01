@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 server.use(express.static(__dirname + '/public'));
 server.set('port', PORT);

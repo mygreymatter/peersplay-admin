@@ -1,12 +1,40 @@
 <template>
     <div>
-        
-        <div class="container" v-show="canShowViews">
 
+        <div class="container" v-show="isSigningUp|isLogging">
+          <div class="row">
+            <div class="col l4"></div>
+            <div class="col l4 center-align">
+
+              <div class="preloader-wrapper big active">
+                  <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="progress-status">
+                {{progressStatus}}
+              </div>
+
+          </div>
+          <div class="col l4"></div>
+
+          </div>
+        </div>
+
+        <div class="container" v-show="canShowViews && !(isSigningUp || isLogging)" >
             <div class="row">
-
                 <div class="col l1"></div>
                 <div class="col l10">
+                    <!-- Login component  -->
                     <div class="card hoverable">
                         <div class="car-action">
                             <div class="row auth-header">
@@ -22,7 +50,7 @@
 
                             <div class="row">
                                 <form action="" class="col s12">
-                                    
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">email</i>
@@ -60,7 +88,7 @@
                                         <div class="col s6 center-align" v-show="!isLoginSelected">
                                             <a class="waves-effect waves-light btn" @click="signup">Signup</a>
                                         </div>
-                                    
+
                                     </div>
 
                                 </form>
@@ -75,7 +103,7 @@
             </div>
 
         </div>
-        
+
 
     </div>
 </template>
@@ -106,7 +134,8 @@ const router = new VueRouter({
                     confirmPassword:''
                 },
                 authToken:null,
-                canShowViews:false
+                canShowViews:false,
+                progressStatus:''
             }
         },router,
         created(){
@@ -125,6 +154,7 @@ const router = new VueRouter({
                         if(rememberMe === '0'){
                             firebase.auth().signOut();
                         }else if(rememberMe === '1'){
+
                             var url = "/dashboard";
                             $(location).attr('href', url);
                         }
@@ -133,11 +163,12 @@ const router = new VueRouter({
                         this.user.password = '';
                         this.user.confirmPassword = '';
                         this.isLoginSelected = true;
-                        this.isSigningUp = false;
+
+                        //this.isSigningUp = false;
                     }else if(this.isLogging){
                         var url = "/dashboard";
                         $(location).attr('href', url);
-                        this.isLogging = false;
+                        //this.isLogging = false;
                     }
                 }else{
                     console.log('User is not signed in.');
@@ -154,13 +185,14 @@ const router = new VueRouter({
             },showSignup(){
                 this.isLoginSelected = false;
             },signup(){
-        
+
                 if(this.user.password !== this.user.confirmPassword){
                     alert('The passwords must be same.')
                     return;
                 }
 
                 this.isSigningUp = true;
+                this.progressStatus = "Please wait while signing up...";
                 firebase.auth().createUserWithEmailAndPassword(this.user.username,this.user.password)
                 .catch(function(error) {
                     // Handle Errors here.
@@ -175,11 +207,12 @@ const router = new VueRouter({
                     console.log(error);
                     this.isSigningUp = false;
             });
-        
+
             },login(){
                 console.log('Login');
 
                 this.isLogging = true;
+                this.progressStatus = "Please wait while logging...";
                 firebase.auth().signInWithEmailAndPassword(this.user.username,this.user.password)
                 .catch(function(error) {
                 // Handle Errors here.
@@ -241,7 +274,7 @@ const router = new VueRouter({
     .main-container{
         margin-top:4%;
         padding:2%;
-    }   
+    }
 }
 
 </style>
