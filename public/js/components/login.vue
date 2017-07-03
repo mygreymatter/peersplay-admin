@@ -151,7 +151,7 @@ const router = new VueRouter({
         created(){
             //isSigningUp = false;
             var rememberMe = this.$cookie.get('remember_me');
-            console.log('Remember Me: ' + rememberMe);
+            //console.log('Remember Me: ' + rememberMe);
 
             if(rememberMe === null || rememberMe === undefined)
                 this.$cookie.set('remember_me',0);
@@ -186,7 +186,7 @@ const router = new VueRouter({
             });
         },
         mounted(){
-            console.log('Cookie onMounted:' + this.$cookie.get('auth-token'));
+            //console.log('Cookie onMounted:' + this.$cookie.get('auth-token'));
         },
         methods:{
             showLogin(){

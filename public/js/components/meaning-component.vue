@@ -88,12 +88,10 @@ export default {
     
     EventBus.$on('word-title',title => {
       this.word.title = title;
-      console.log('Word Title: ' + title);
     });
 
   },methods:{
     save(){
-        console.log('Word Title: ' + this.word.title + " " + this.word.id);
 
         this.isWordRequired = this.word.title === '';
         this.isMeaningRequired = this.word.meaning === '';
@@ -105,8 +103,6 @@ export default {
             var instance = this;
             this.isSaving = true;
 
-            this.wordPhrasal = "ace";
-
             if(this.word.exampleTwo !== '')
                 this.word.exampleTwo = this.word.exampleTwo.toLowerCase();
 
@@ -114,28 +110,27 @@ export default {
                 'title':this.word.title.toLowerCase(),
                 'type':this.word.type.toLowerCase(),
                 'meaning':this.word.meaning.toLowerCase(),
-                'example-1':this.word.exampleOne.toLowerCase(),
-                'example-2':this.word.exampleTwo.toLowerCase()
+                'exampleOne':this.word.exampleOne.toLowerCase(),
+                'exampleTwo':this.word.exampleTwo.toLowerCase()
             }
             
 
             var ref = firebase.database().ref('words/' + this.word.title +'/'+this.word.id);
             ref.once('value').then(function(snapshot){
-                if(snapshot.val() === null){
-                    ref.set(item);
-                    ref.once('value',function(snapshot){
-                        console.log(snapshot.val());
-                        if(snapshot.val().word === instance.wordPhrasal){
-                            instance.isSaving = false;
-                            instance.wordPhrasal = instance.meaning = instance.exampleOne = instance.exampleTwo = '';
-                        }
-                    });
-                }
+                
+                  ref.set(item);
+                  ref.once('value',function(snapshot){
+                      console.log(snapshot.val());
+                      if(snapshot.val().title === instance.word.title){
+                          instance.isSaving = false;
+                          Materialize.toast('It has been saved.', 2000);
+                          instance.wordPhrasal = instance.meaning = instance.exampleOne = instance.exampleTwo = '';
+                      }
+                  });
+              
             });
 
         }
-
-        //console.log(this.wordPhrasal + ' ' + this.meaning);
     }
   }
 }
