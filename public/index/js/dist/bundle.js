@@ -17,7 +17,7 @@ var Component = __webpack_require__(40)(
   /* cssModules */
   null
 )
-Component.options.__file = "/home/mayo/Workspace/geekmonk/pipeline-admin-heroku/public/index/js/components/login.vue"
+Component.options.__file = "/home/mayo/Workspace/geekmonk/planetmentor/admin/public/index/js/components/login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] login.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -157,6 +157,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -183,7 +211,8 @@ const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
                 confirmPassword: ''
             },
             authToken: null,
-            canShowViews: false
+            canShowViews: false,
+            progressStatus: ''
         };
     }, router,
     created() {
@@ -201,6 +230,7 @@ const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
                     if (rememberMe === '0') {
                         firebase.auth().signOut();
                     } else if (rememberMe === '1') {
+
                         var url = "/dashboard";
                         $(location).attr('href', url);
                     }
@@ -209,11 +239,12 @@ const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
                     this.user.password = '';
                     this.user.confirmPassword = '';
                     this.isLoginSelected = true;
-                    this.isSigningUp = false;
+
+                    //this.isSigningUp = false;
                 } else if (this.isLogging) {
                     var url = "/dashboard";
                     $(location).attr('href', url);
-                    this.isLogging = false;
+                    //this.isLogging = false;
                 }
             } else {
                 console.log('User is not signed in.');
@@ -237,6 +268,7 @@ const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             }
 
             this.isSigningUp = true;
+            this.progressStatus = "Please wait while signing up...";
             firebase.auth().createUserWithEmailAndPassword(this.user.username, this.user.password).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -254,6 +286,7 @@ const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
             console.log('Login');
 
             this.isLogging = true;
+            this.progressStatus = "Please wait while logging...";
             firebase.auth().signInWithEmailAndPassword(this.user.username, this.user.password).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -446,8 +479,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.canShowViews),
-      expression: "canShowViews"
+      value: (_vm.isSigningUp | _vm.isLogging),
+      expression: "isSigningUp|isLogging"
+    }],
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col l4"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "col l4 center-align"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "progress-status"
+  }, [_vm._v("\n            " + _vm._s(_vm.progressStatus) + "\n          ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col l4"
+  })])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.canShowViews && !(_vm.isSigningUp || _vm.isLogging)),
+      expression: "canShowViews && !(isSigningUp || isLogging)"
     }],
     staticClass: "container"
   }, [_c('div', {
@@ -599,7 +650,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Confirm Password")])])]), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -629,6 +680,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col l1"
   })])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "preloader-wrapper big active"
+  }, [_c('div', {
+    staticClass: "spinner-layer spinner-blue-only"
+  }, [_c('div', {
+    staticClass: "circle-clipper left"
+  }, [_c('div', {
+    staticClass: "circle"
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "gap-patch"
+  }, [_c('div', {
+    staticClass: "circle"
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "circle-clipper right"
+  }, [_c('div', {
+    staticClass: "circle"
+  })])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col s6 center-align"
   }, [_c('a', {

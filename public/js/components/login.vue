@@ -1,6 +1,14 @@
 <template>
     <div>
 
+        <div class="container">
+            <div class="row">
+                <div class="col l12 center-align">
+                    <h3 class="title"><strong>{{msg}}</strong></h3>
+                </div>
+            </div>
+        </div>
+
         <div class="container" v-show="isSigningUp|isLogging">
           <div class="row">
             <div class="col l4"></div>
@@ -32,8 +40,8 @@
 
         <div class="container" v-show="canShowViews && !(isSigningUp || isLogging)" >
             <div class="row">
-                <div class="col l1"></div>
-                <div class="col l10">
+                <div class="col l3"></div>
+                <div class="col l6 center-align">
                     <!-- Login component  -->
                     <div class="card hoverable">
                         <div class="car-action">
@@ -98,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col l1"></div>
+                <div class="col l3"></div>
 
             </div>
 
@@ -124,6 +132,7 @@ const router = new VueRouter({
     export default{
         data(){
             return{
+                msg: 'Welcome To PlanetMentor',
                 title:'Login Component',
                 isLoginSelected:true,
                 isSigningUp: false,
@@ -137,7 +146,8 @@ const router = new VueRouter({
                 canShowViews:false,
                 progressStatus:''
             }
-        },router,
+        },
+        router,
         created(){
             //isSigningUp = false;
             var rememberMe = this.$cookie.get('remember_me');
@@ -154,8 +164,7 @@ const router = new VueRouter({
                         if(rememberMe === '0'){
                             firebase.auth().signOut();
                         }else if(rememberMe === '1'){
-
-                            var url = "/dashboard";
+                            var url = "/vocabulary";
                             $(location).attr('href', url);
                         }
                     }else if(this.isSigningUp){
@@ -166,7 +175,7 @@ const router = new VueRouter({
 
                         //this.isSigningUp = false;
                     }else if(this.isLogging){
-                        var url = "/dashboard";
+                        var url = "/vocabulary";
                         $(location).attr('href', url);
                         //this.isLogging = false;
                     }

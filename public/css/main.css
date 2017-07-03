@@ -16,6 +16,10 @@
         font-size: 1.2rem;
     }
 
+    .title {
+        font-family: robtoLight;
+    }
+
     .button{
       background-color: #ee6e73;
     }

@@ -141,6 +141,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import {EventBus} from './event-bus.vue'
 import Meaning from './meaning-component.vue'
 
 export default{
@@ -155,25 +156,24 @@ export default{
             isWordRequired:false,
             words:[
               {
+                id:'',
+                title:this.wordPhrasal,
                 index:1,
                 meaning:'',
                 type:'noun',
                 exampleOne:'',
                 exampleTwo:''
-              },
-              {
-                index:2,
-                meaning:'',
-                type:'pronoun',
-                exampleOne:'',
-                exampleTwo:''
-              },
+              }
             ]
         }
     },components:{
         Meaning
     },created(){
         // Get a reference to the database service
+        /*EventBus.$on("save-word",word => {
+            console.log("Save in Parent: " + word);
+            this.save(word);
+        });*/
     },mounted(){
         // Extension materialize.css
 
@@ -194,14 +194,31 @@ export default{
 
         },wordPhrasal:function(word){
             this.isWordRequired = word.length === 0;
+
+            if(word.length > 0)
+                EventBus.$emit('word-title',word);
         }
     },methods:{
         showEditor(){
             this.isEditMode = !this.isEditMode;
             this.isSaving = false;
             console.log("Edit Mode: " + this.isEditMode);
+
         },addMeaning(){
-            this.range += 1;
+            let word = {
+                id:'',
+                title:this.wordPhrasal,
+                index: this.words.length + 1,
+                meaning:'',
+                type:'noun',
+                exampleOne:'',
+                exampleTwo:''
+            };
+
+            this.words.push(word);
+
+        },save(word){
+            console.log('Saving ' + word);
         }
     }
 }
