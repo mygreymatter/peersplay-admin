@@ -21,6 +21,7 @@
 	                    	</li>
 	                    </ul>
 	                </p>
+
 	            </div>
 	        </div>
 	    </div><!-- words view - end -->

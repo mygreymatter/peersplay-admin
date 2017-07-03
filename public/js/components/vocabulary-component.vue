@@ -24,34 +24,13 @@
                     <!-- results - start -->
                     <div class="col l12">
                         <ul>
-                            <li v-for="(word,index) in resultWordsList">
-
+                            <li v-for="(word,index) in wordsList">
                                 <Word :word="word" :index="index"></Word>            
-
                             </li>
                         </ul>
                     </div>
                     <!-- results - end -->
                 </div>
-
-                <div class="row">
-                    <!--List of words - start -->
-                    <div id="list-words-container" class="col s12" v-show="resultWordsList.length == 0">
-                        <!-- container - start -->
-                            <div class="words-container" v-show="canShowWords">
-                                <!-- words View -->
-                                <ul>
-                                    <li v-for="(word,index) in userWordsList">
-
-                                        <Word :word="word" :index="index"></Word>            
-
-                                    </li>
-                                </ul>
-                            </div><!-- container - end -->
-                    </div>
-                    <!--List of words - end -->
-                </div>
-
         </div>
 
         <!-- Editor - start -->
@@ -120,8 +99,7 @@ export default{
             wordPhrasal:'',
             query:'',
             wordSelected:{},
-            resultWordsList:[],
-            userWordsList:[],
+            wordsList:[],
             words:[
               {
                 id:'',
@@ -144,39 +122,16 @@ export default{
 
         EventBus.$on('edit-word',index => {
             this.mode = 1;
-            this.wordSelected = this.userWordsList[index];
+
+            this.wordSelected = this.wordsList[index];
+
             this.wordSelected['index'] = index;
             this.words = [];
             this.words.push(this.wordSelected);
             this.wordPhrasal = this.wordSelected.title;
         });
 
-        var words = firebase.database().ref('words/');
-        var instance = this;
-
-        words.orderByKey()       
-            .once('value')
-            .then(function(snapshot){
-
-                if(snapshot.hasChildren()){
-                    var o = snapshot.val();
-
-                    instance.userWordsList = [];
-                    let index = 0;
-
-                    Object.keys(o).forEach(function(key){
-                        var w = snapshot.val()[key];
-                        Object.keys(w).forEach(function(k){
-                            w[k]['index'] = index++;
-                            w[k]['id'] = k;
-                            instance.userWordsList.push(w[k]);    
-                        })
-                        
-                    });
-
-                }
-                
-            });
+        this.getUserWords();
         
     },mounted(){
         // Extension materialize.css
@@ -189,8 +144,12 @@ export default{
 
             }else{
                 this.isLoading = false;
-                this.resultWordsList = [];
-                this.canShowWords = true;
+                
+                if(val.length == 0){
+                    this.wordsList = [];
+                    this.canShowWords = true;
+                    this.getUserWords();
+                }
             }
 
         },wordPhrasal:function(word){
@@ -200,7 +159,35 @@ export default{
                 EventBus.$emit('word-title',word);
         }
     },methods:{
-        showEditor(){
+        getUserWords(){
+            var words = firebase.database().ref('words/');
+            var instance = this;
+
+            words.orderByKey()       
+                .once('value')
+                .then(function(snapshot){
+
+                    if(snapshot.hasChildren()){
+                        var o = snapshot.val();
+
+                        instance.wordsList = [];
+                        let index = 0;
+
+                        Object.keys(o).forEach(function(key){
+                            var w = snapshot.val()[key];
+                            Object.keys(w).forEach(function(k){
+                                w[k]['index'] = index++;
+                                w[k]['id'] = k;
+                                instance.wordsList.push(w[k]);    
+                            })
+                            
+                        });
+
+                    }
+                    
+                });
+
+        },showEditor(){
             this.mode = (this.mode === 1 || this.mode === 2) ? 0 : 1;
             this.isSaving = false;
             console.log("Edit Mode: " + this.mode === 1);
@@ -238,11 +225,16 @@ export default{
 
                               });
 
-                        instance.resultWordsList = [];
+                        instance.wordsList = [];
+                        let index = 0;
+
                         Object.keys(o).forEach(function(key){
                             var w = snapshot.val()[key];
+
                             Object.keys(w).forEach(function(k){
-                                instance.resultWordsList.push(w[k]);    
+                                w[k]['index'] = index++;
+                                w[k]['id'] = k;
+                                instance.wordsList.push(w[k]);    
                             })
                             
                         });
