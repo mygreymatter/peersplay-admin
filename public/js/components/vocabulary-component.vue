@@ -23,11 +23,29 @@
                 <div class="row">
                     <!-- results - start -->
                     <div class="col l12">
+                        <div class="center-align" v-show="wordsList.length === 0 && isLoading">
+                            <div class="preloader-wrapper big active">
+                              <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                  <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                  <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                  <div class="circle"></div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
                         <ul>
                             <li v-for="(word,index) in wordsList">
                                 <Word :word="word" :index="index"></Word>            
                             </li>
                         </ul>
+
+                        <h3 class="center-align" v-show="wordsList.length === 0 && !isLoading">Your words list is empty!</h3>
                     </div>
                     <!-- results - end -->
                 </div>
@@ -100,6 +118,8 @@ export default{
             query:'',
             wordSelected:{},
             wordsList:[],
+            userWords:{},
+            wordId:'',
             words:[
               {
                 id:'',
@@ -115,27 +135,93 @@ export default{
     },components:{
         Meaning,Word
     },created(){
+        //do not display empty list message initially
+        this.isLoading = true;
 
         EventBus.$on('go-back',mode => {
             this.showEditor();
         });
 
-        EventBus.$on('edit-word',index => {
-            this.mode = 1;
-
+        EventBus.$on('add-word',index => {
             this.wordSelected = this.wordsList[index];
+            
+            var currentUser = firebase.auth().currentUser;
+            var ref = firebase.database().ref("users/" + currentUser.uid);
+            var instance = this;
+            
+            ref
+            .once('value')
+            .then(snapshot => {
 
-            this.wordSelected['index'] = index;
-            this.words = [];
-            this.words.push(this.wordSelected);
-            this.wordPhrasal = this.wordSelected.title;
+                if(snapshot != null){
+                    var user = snapshot.val();
+                    var value = instance.wordSelected.id;
+
+                    if(user.words === undefined){
+                       var words = new Object;
+                       words[instance.getKey(instance.wordSelected.title)] = [];
+                       words[instance.getKey(instance.wordSelected.title)].push(value);
+                       user['words'] = words;
+                    }else{
+                        var words = user['words'];
+
+                        if(words.hasOwnProperty(instance.getKey(instance.wordSelected.title))){
+                            words[instance.getKey(instance.wordSelected.title)].push(value);
+                        }else{
+                            words[instance.getKey(instance.wordSelected.title)] = [];
+                            words[instance.getKey(instance.wordSelected.title)].push(value);
+                        }
+
+                        user['words'] = words;
+                    }
+                    ref.set(user);
+                    instance.initUserWords();
+                    instance.queryFirebase(instance.query);
+                }
+
+            });
+            
         });
 
-        this.getUserWords();
-        
-    },mounted(){
-        // Extension materialize.css
+        EventBus.$on('delete-word',index => {
+            this.wordSelected = this.wordsList[index];
+            
+            var currentUser = firebase.auth().currentUser;
+            var ref = firebase.database().ref("users/" + currentUser.uid);
+            var instance = this;
+            
+            ref.once('value')
+                .then(snapshot => {
+                    var user = snapshot.val();
+                    
+                    if(user.words.hasOwnProperty(this.getKey(this.wordSelected.title))){
+                        var meanings = user.words[this.getKey(this.wordSelected.title)];
+                        var index = meanings.indexOf(this.wordSelected.id);
+                        meanings.splice(index,1)
+                        if(meanings.length > 0)
+                            user.words[this.getKey(this.wordSelected.title)] = meanings;
+                        else
+                            delete user.words[this.getKey(this.wordSelected.title)];
+                    }
 
+                    ref.set(user);
+                    instance.getUserWords();
+
+                    if(instance.query.length > 0)
+                        instance.queryFirebase(instance.query);
+                    
+                });
+        });
+
+
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                this.getUserWords();
+            }else{
+
+            }
+        });
+        
     },watch:{
         query:function(val){
             if(val.length >= 2){
@@ -159,33 +245,74 @@ export default{
                 EventBus.$emit('word-title',word);
         }
     },methods:{
-        getUserWords(){
-            var words = firebase.database().ref('words/');
+        initUserWords(){
+            var currentUser  = firebase.auth(). currentUser;
             var instance = this;
 
-            words.orderByKey()       
-                .once('value')
-                .then(function(snapshot){
+            firebase.database()
+                    .ref('users/'+currentUser.uid)
+                    .once('value')
+                    .then(snapshot => {
+                        if(snapshot == null){
+                            instance.userWords = null;
+                        }else{
+                            //get user snapshsot
+                            var user = snapshot.val();
+                            instance.userWords = (user.words === undefined) ? null : user.words;
+                        }
+                    });
 
-                    if(snapshot.hasChildren()){
-                        var o = snapshot.val();
+        },getUserWords(){
+            //fetch current user
+            var currentUser  = firebase.auth(). currentUser;
+            var instance = this;
+            this.isLoading = true;
 
-                        instance.wordsList = [];
-                        let index = 0;
+            firebase.database()
+                    .ref('users/'+currentUser.uid)
+                    .once('value')
+                    .then(snapshot => {
+                        if(snapshot == null){
+                            instance.isLoading = false;
+                            return;
+                        }else{
+                            //get user snapshsot
+                            var user = snapshot.val();
+                            //check whether words added by the user
+                            if(user.words === undefined){
+                                instance.userWords = null;
+                                instance.isLoading = false;
+                                return;
+                            }else{
+                                
+                                instance.wordsList = [];
+                                instance.userWords = user.words;
+                                let index = 0;
 
-                        Object.keys(o).forEach(function(key){
-                            var w = snapshot.val()[key];
-                            Object.keys(w).forEach(function(k){
-                                w[k]['index'] = index++;
-                                w[k]['id'] = k;
-                                instance.wordsList.push(w[k]);    
-                            })
-                            
-                        });
+                                //iterate through the words added by the user
+                                Object.keys(user.words)
+                                      .forEach(function(key){
+                                        //iterate through meanings of each word
+                                        user.words[key].forEach(function(id){
+                                            instance.wordId = id;
+                                            //fetch each word with its meaning based on id
+                                            firebase.database()
+                                                .ref('words/' + key  + '/' + id)
+                                                .once('value')
+                                                .then(function(snapshot){
 
-                    }
-                    
-                });
+                                                    var word = snapshot.val();
+                                                    word["id"] = instance.wordId;
+                                                    word['index'] = index++;
+                                                    word['isAdded'] = true;
+                                                    instance.wordsList.push(word);
+                                                    instance.isLoading = false;
+                                                });
+                                    });                                    
+                                });
+                            }
+                        }
+                    });
 
         },showEditor(){
             this.mode = (this.mode === 1 || this.mode === 2) ? 0 : 1;
@@ -207,41 +334,71 @@ export default{
 
         },queryFirebase(val){
             
-            var words = firebase.database().ref('words/');
             var instance = this;
 
-            words.orderByKey()       
+            //fetch words
+            firebase.database().ref('words/').orderByKey()       
                 .once('value')
                 .then(function(snapshot){
-
+                    //check whether there children at node 'words/'
                     if(snapshot.hasChildren()){
                         var o = snapshot.val();
+                        //iterate through all words at the node 'words/'
                         Object.keys(snapshot.val())
                               .forEach(function(key){
-
+                                //delete the word if does not contain the query word
                                 if(key.indexOf(val) === -1){
                                     delete o[key];
                                 }
-
                               });
 
                         instance.wordsList = [];
                         let index = 0;
+                        var userWords = null;
 
+                        //iterate through the matched words
                         Object.keys(o).forEach(function(key){
-                            var w = snapshot.val()[key];
-
-                            Object.keys(w).forEach(function(k){
-                                w[k]['index'] = index++;
-                                w[k]['id'] = k;
-                                instance.wordsList.push(w[k]);    
+                            instance.matchedWords = snapshot.val()[key];
+                            //iterate through different meanings of each word might have
+                            Object.keys(instance.matchedWords).forEach(function(k){
+                                instance.matchedWords[k]['index'] = index++;
+                                instance.matchedWords[k]['id'] = k;
+                                //push each individual meaning as a different word
+                                instance.wordsList.push(instance.matchedWords[k]);    
                             })
+                        });
+
+                        //iterate through the matched words
+                        instance.wordsList.forEach(word =>{
+
+                            //check whether the word has been added by the current user
+                            if(instance.userWords != null && instance.userWords.hasOwnProperty(word.title)){
+                                var meanings = instance.userWords[instance.getKey(word.title)];
+                                var hasAdded = false;
+
+                                try{
+                                    meanings.forEach(m => {
+                                        if(m === word.id){
+                                            hasAdded = true;
+                                            throw BreakException;
+                                        }
+                                    });
+                                }catch(e){
+
+                                }
+
+                                word['isAdded'] = hasAdded;    
+                            }else{
+                                word['isAdded'] = false;
+                            }
                             
                         });
 
                     }
                     
                 });
+        },getKey(key){
+            return key;
         }
     }
 }

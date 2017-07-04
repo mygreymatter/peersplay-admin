@@ -6,7 +6,12 @@
 	                
 	                <span class="word">{{word.title}}</span>
 	                <span class="word-type">{{word.type}}</span>
-	                <span class="add-word" @click="editWord"><i class="material-icons">edit</i></span>
+	                <span class="add-word" @click="addWord" v-show="!word.isAdded">
+	                	<i class="material-icons">add</i>
+	                </span>
+	                <span class="add-word" @click="deleteWord" v-show="word.isAdded">
+	                	<i class="material-icons">clear</i>
+	                </span>
 
 	                <p class="word-definition">{{word.meaning}}</p>
 
@@ -40,9 +45,11 @@
 
 			}
 		},methods:{
-			editWord(){
-				console.log('Edit Word: ' + this.word.title + " " + this.index);
-				EventBus.$emit('edit-word',this.index);
+			addWord(){
+				console.log('Add Word: ' + this.word.title + " " + this.index);
+				EventBus.$emit('add-word',this.index);
+		    },deleteWord(){
+		    	EventBus.$emit('delete-word',this.index);
 		    }
 		}
 	}
@@ -103,6 +110,5 @@ ul,ul li{
 	list-style-type: disc;
 	margin-left:10px;
 }
-
 	
 </style>
